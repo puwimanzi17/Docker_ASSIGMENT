@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    
+  </style>
+</head>
+<body>
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" method="POST">
+      <input type="text" id="title" placeholder="Title of the book"/>
+      <input type="text" id="author" placeholder="Author of the book"/>
+      <input type="number" id="quantity" placeholder="Quantity"/>
+      <button name="submit" onclick="post(event)">Add to store</button>
+    </form>
+    </div>
+</div>
+
+<table id="table">
+  <tr>
+    <th>TITLE</th>
+    <th>Author</th>
+    <th>Quantity</th>
+  </tr>
+  <tr>
+    <td id="titleget"></td>
+    <td id="authorget"></td>
+    <td id="quantityget"></td>
+  </tr>
+</table>
+<script type="text/javascript">
+
+const table = document.getElementById("table");
+function post(eveform) {
+eveform.preventDefault();
+var titleget = document.getElementById("title").value;
+var authorget = document.getElementById("author").value;
+var quantityget = document.getElementById("quantity").value;
+
+       let title  =  document.createElement("td"); title.innerHTML = titleget;
+       let author  =  document.createElement("td"); author.innerHTML = authorget;
+       let quantity  =  document.createElement("td"); quantity.innerHTML = quantityget;
+
+       let row = document.createElement("tr");
+       row.appendChild(title);
+       row.appendChild(author);
+       row.appendChild(quantity);
+
+       table.appendChild(row)
+
+}
+</script>
+</body>
+</html>
